@@ -1,4 +1,4 @@
-package urlFindChar;
+package urlFindKeyword;
 
 import java.net.URL;
 
