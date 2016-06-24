@@ -1,34 +1,22 @@
 package urlFindKeyword;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URL;
 
-class SourceGetter {
-    static String getSource() throws IOException{
-        //String inputtedURL = SetURLKeyword.setURL() ;
+public class URLfindKeyword {
+
+    public static void main(String[] kanazawaShintenOmedetougozaimasu) throws IOException {
         
-        URL url = new URL(SetURLKeyword.setURL());
+        final String inputtedURL = SetURLKeyword.setURL();
         
-        InputStream inputStream = url.openStream();
-        StringBuffer stringBuffer = new StringBuffer();
-        try {
-            BufferedReader bufferedReader 
-            = new BufferedReader(new InputStreamReader(inputStream));
-            String source1line = "";
-            //ソースを1行ずつ読む  最後の行の次はnullになるからnullになるまで読む
-            while (((source1line = bufferedReader.readLine())== null) == false) { 
-                stringBuffer.append(source1line);
-            }
-        } catch (Exception e) {
-        }
+        final String inputtedKeyword = SetURLKeyword.setKeyword();
         
-        //System.out.println(stringBuffer);
+                
+        System.out.println(inputtedKeyword + "を探すためにたどった経路");
+        System.out.println(inputtedURL + "\n    ↓");
         
-        inputStream.close();
-        return stringBuffer.toString();
+        //もし見つからなかったら、次のURL
+        
+        
     }
 
 }
