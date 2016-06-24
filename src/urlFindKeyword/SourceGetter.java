@@ -8,9 +8,9 @@ import java.net.URL;
 
 class SourceGetter {
     static String getSource() throws IOException{
-        String inputtedURL = SetURLKeyword.setURL() ;
+        //String inputtedURL = SetURLKeyword.setURL() ;
         
-        URL url = new URL(inputtedURL);
+        URL url = new URL(SetURLKeyword.setURL());
         
         InputStream inputStream = url.openStream();
         StringBuffer stringBuffer = new StringBuffer();
