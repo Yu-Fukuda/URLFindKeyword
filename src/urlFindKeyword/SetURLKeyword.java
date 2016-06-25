@@ -6,6 +6,10 @@ import java.io.InputStreamReader;
 import java.net.URL;
 
 public class SetURLKeyword {
+
+    static String url;
+    static String keyword;
+        
     static final String setURL() throws IOException{
         System.out.println("URL入れまっし: "); //金沢弁        
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
