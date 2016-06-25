@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 
 class SourceGetter {
-    static String getSource() throws IOException{
+    static String getSource() throws IOException {
         String inputtedURL = SetURLKeyword.url ;
         
         URL url = new URL(inputtedURL);
@@ -23,6 +23,8 @@ class SourceGetter {
                 stringBuffer.append(source1line);
             }
         } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Webページの読み込みに失敗しました。");
         }
         
         //System.out.println(stringBuffer);

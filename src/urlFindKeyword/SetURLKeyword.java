@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 
-public class SetURLKeyword {
+class SetURLKeyword {
 
     static String url;
     static String keyword;

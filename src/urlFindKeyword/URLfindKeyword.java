@@ -9,18 +9,22 @@ public class URLfindKeyword {
         SetURLKeyword.keyword = SetURLKeyword.setKeyword();
          
                 
-        System.out.println(SetURLKeyword.keyword + "を探すためにたどった経路"); // 1回のみ
+        System.out.println(SetURLKeyword.keyword + " を探すためにたどった経路"); // 1回のみ
+        System.out.println(SetURLKeyword.url + "\n    ↓"); 
         
-        System.out.println(SetURLKeyword.url + "\n    ↓"); // キーワード検索がヒットするまで繰り返す
-        
-        if (KeywordFinder.keywordFound() ){
-            System.out.println("キーワード発見");
-        } else if (KeywordFinder.keywordFound() == false) {
-            System.out.println("キーワード見つからない");
+        int i = 0;
+        while (ATagKeywordFinder.keywordFound() == false){
+            //キーワードが見つからなかったら、URLを更新する 
+            SetURLKeyword.url = ATagKeywordFinder.aTagFilter().get(i);
+            System.out.println(ATagKeywordFinder.aTagFilter().get(i));
+            System.out.println("    ↓"); 
+            i ++ ;
             
-        } else {
-            System.out.println("キーワード判定エラーです");
+            if (i >= ATagKeywordFinder.aTagFilter().get(i).length()){
+                System.out.println(SetURLKeyword.keyword + "は見つかりませんでした。");
+            }
         }
+        System.out.println("キーワード発見!!");
         
         //String httpSource = SourceGetter.getSource() ;
         //System.out.println("ソースの中身: " + httpSource);
